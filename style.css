@@ -103,7 +103,7 @@ color: var(--text-color);
 }
 .home-content .text-animate {
   position: relative;
-  width: 32.8rem;
+  width: 29.6rem;
 }
 
 .home-content .text-animate h3 {
@@ -128,7 +128,7 @@ color: var(--text-color);
   left: 0;
   width: 0;
   height: 100%;
-  border-right: 2px solid var(--main-color);
+  border-right: 3px solid var(--main-color);
   z-index: -1;
   animation: homeCursorText 6s linear infinite;
   animation-delay: 2s;
@@ -137,6 +137,11 @@ color: var(--text-color);
   animation: homeCursorText 6s linear infinite;
   animation-delay: 2s;
 }
+.home-animate {
+  animation: homeBgText 6s linear infinite;
+  animation-delay: 2s;
+}
+
 .home-content p {
   position: relative;
   font-size: 1.6rem;

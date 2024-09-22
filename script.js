@@ -1,28 +1,7 @@
-window.addEventListener('pageshow', () => {
-    const textAnimate = document.querySelector('.text-animate h3::before');
-    textAnimate.style.animation = 'none';  // Remove animation
-    setTimeout(() => {
-      textAnimate.style.animation = '';   // Reapply animation
-    }, 10);
-  });
-  
-
-// toggle icon navbar
-
-
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
-
-
-
-// scroll sections
+// Scroll sections
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
+
 window.onscroll = () => {
     let top = window.scrollY;
 
@@ -42,6 +21,14 @@ window.onscroll = () => {
 
             // Active sections for animation on scroll
             sec.classList.add('show-animate');
+
+            // Restart animation for home section
+            if (id === 'home') {
+                const textAnimate = document.querySelector('.home-content .text-animate h3');
+                textAnimate.classList.remove('home-animate');
+                void textAnimate.offsetWidth; // Trigger reflow
+                textAnimate.classList.add('home-animate');
+            }
         } else {
             sec.classList.remove('show-animate');
         }
@@ -54,7 +41,8 @@ window.onscroll = () => {
     // Remove toggle icon and navbar when a navbar link is clicked (on scroll)
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
-    // animation footer on scroll
+    
+    // Animation footer on scroll
     let footer = document.querySelector('footer');
-    footer.classList.toggle('show-animate',this.innerHeight + this.scrollY >= document.body.offsetHeight - 1);
+    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.body.offsetHeight - 1);
 };
