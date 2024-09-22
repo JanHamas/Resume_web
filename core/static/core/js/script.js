@@ -26,7 +26,11 @@ window.onscroll = () => {
             if (id === 'home') {
                 const textAnimate = document.querySelector('.home-content .text-animate h3');
                 textAnimate.classList.remove('home-animate');
-                void textAnimate.offsetWidth; // Trigger reflow
+
+                // Trigger reflow for h3 animation reset
+                void textAnimate.offsetWidth;
+
+                // Reapply the animation for both h3 and its ::before element
                 textAnimate.classList.add('home-animate');
             }
         } else {
