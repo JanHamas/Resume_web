@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +8,7 @@
     <title>Portfolio Website
     </title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
 
     <!-- box icons -->
     <link
@@ -70,7 +70,7 @@
       <h2 class="heading">About <span>Me</span><span class="animate scroll" style="--i:1;"></span>
       </h2>
       <div class="about-img">
-        <img src="hamas.jpg" alt="" />
+        <img src="{% static 'core/images/hamas.jpg' %}" alt="" />
         <span class="circle-spin"></span>
         <span class="animate scroll" style="--i:2;"></span>
       </div>
@@ -248,7 +248,7 @@
           <span class="animate scroll" style="--i:5;"></span>
         </div>
         <div class="input-field">
-          <div class="textarea-field">
+          <div class="textarea-field" required>
             <textarea
               name="message"
               id="message"
@@ -262,7 +262,7 @@
         </div>
 
         <div class="btn-box">
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn" onclick="send()">Send Message</button>
           <span class="animate scroll" style="--i:9;"></span>
 
         </div>
@@ -279,6 +279,6 @@
       </div>
      </div>
 
-    <script src="script.js"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
   </body>
 </html>

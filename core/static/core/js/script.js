@@ -50,3 +50,10 @@ window.onscroll = () => {
     let footer = document.querySelector('footer');
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.body.offsetHeight - 1);
 };
+
+// Alret for send message 
+function send(){
+    a="Your email succesfully sent to hamas jan"
+    alert(a)
+    
+}
