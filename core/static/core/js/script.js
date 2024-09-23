@@ -54,6 +54,6 @@ window.onscroll = () => {
 // Alret for send message 
 function send(){
     a="Your email succesfully sent to hamas jan"
-    alert(a)a
+    alert(a)
     
 }
